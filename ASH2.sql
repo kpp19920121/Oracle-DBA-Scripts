@@ -1,5 +1,6 @@
 -- how much history do we have:
-select min(sample_time) from V$ACTIVE_SESSION_HISTORY
+select to_char(min(sample_time),'yyyy-MM-dd HH24:mi:ss') from V$ACTIVE_SESSION_HISTORY
+
 
 -- top events
 select event,count(*) from DBA_HIST_ACTIVE_SESS_HISTORY where sample_time> sysdate-1/24 
@@ -66,7 +67,7 @@ and  sample_time< to_date('03-MAR-11 16:30','dd-mon-yy hh24:mi')
 and user_id>0
 and event='buffer busy waits'
 group by user_id
-order by count(*)  2    3    4    5    6    7  ;
+order by count(*)  ;
 
 -- Everyone waiting for specific event
 select sample_time,user_id,sql_id,event,p1,blocking_session from V$ACTIVE_SESSION_HISTORY
