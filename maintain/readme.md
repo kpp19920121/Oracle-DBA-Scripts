@@ -15,7 +15,7 @@
 		       tempfile '/u01/app/oracle/oradata/orcl/develop_temp1.dbf' size 100M
 		       autoextend on next 100M maxsize unlimited extent management local;
 
-#schema#
+# schema #
 
 - 创建用户
 
@@ -35,7 +35,7 @@
 
 		alter user developerUser  identified by icip_user;
 
-#导出库/导入库#
+# 导出库/导入库 #
 
 - 导出整个用户
 
@@ -65,7 +65,7 @@
 		
 
 
-#附件#
+# 附件 #
 
 ## 批量编译视图 ##
 
